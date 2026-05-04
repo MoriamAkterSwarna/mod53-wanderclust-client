@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@import "@heroui/styles"; 
+
+
+.bg-img{
+    background-image: url('./assets/hero_copy.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+}
+
+@media (max-width: 640px) {
+    .bg-img {
+        background-attachment: scroll;
+    }
+}
+
+/* Prevent small horizontal gaps from overflowing (fix viewport/scrollbar issues) */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
