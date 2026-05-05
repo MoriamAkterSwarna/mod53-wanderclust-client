@@ -20,9 +20,7 @@ import { FcGoogle } from "react-icons/fc";
 
 const LoginPage = () => {
   const router = useRouter();
-  const handleSignInWithGoogle = async () => {
-    toast.error("Google sign-in is not configured yet.");
-  };
+  
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -53,6 +51,17 @@ const LoginPage = () => {
       return;
     }
   };
+
+  
+  
+    const handleSignInWithGoogle = async () => {
+      await authClient.signIn.social({
+      provider: "google",
+    },)
+    redirect('/')
+  
+    };
+    
 
   
 

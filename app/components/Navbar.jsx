@@ -13,7 +13,9 @@ const Navbar = () => {
   const user = userInfo.data?.user;
 
 
-  
+  const handleSignOut = async () => {
+    await authClient.signOut();
+  }
 
   return (
     <div className="flex justify-between items-center p-5 bg-white" >
@@ -48,7 +50,7 @@ const Navbar = () => {
             </Avatar>
 
             <Button
-              
+              onClick={handleSignOut}
               variant="danger-soft"
               size="sm"
               className={"rounded-none"}
