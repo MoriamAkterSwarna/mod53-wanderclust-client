@@ -13,15 +13,22 @@ const BookingCard = ({ destinationId, imageUrl, destinationName, price }) => {
   const user = userInfo.data?.user;
 
   const handleBooking = async () => {
+    const userId = user?.id || user?._id;
+
+    if (!userId) {
+      toast.error("Please login to book a destination!");
+      return;
+    }
+
     if (!date) {
       toast.error("Please select departure date!");
       return;
     }
 
     const bookingData = {
-      userId: user.id,
-    userName: user.name,
-    userEmail: user.email,
+      userId,
+      userName: user.name,
+      userEmail: user.email,
       destinationId,
       imageUrl,
       destinationName,
