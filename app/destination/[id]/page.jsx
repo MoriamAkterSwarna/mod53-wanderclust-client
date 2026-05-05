@@ -9,6 +9,7 @@ import DestinationEditModal from "@/app/components/DestinationEditModal";
 import { Button } from "@heroui/react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import BookingCard from "@/app/components/BookingCard";
 
 
 const DestinationDetailsPage = ({ params }) => {
@@ -102,7 +103,12 @@ const DestinationDetailsPage = ({ params }) => {
           </div>
         </div>
 
-        
+        <BookingCard
+          destinationId={_id}
+          imageUrl={imageUrl}
+          destinationName={destinationName}
+          price={price}
+        />
         
       </div>
     </div>
